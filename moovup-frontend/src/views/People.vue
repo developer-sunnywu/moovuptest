@@ -16,35 +16,45 @@
 export default {
   data() {
     return {
-      people: [
-        {
-          "_id": "ae736d8f-5a08-4bab-8e30-1eb2079e5dc2",
-          "name": {
-            "last": "Bass",
-            "first": "Bradley"
-          },
-          "email": "aida.griffith@sybixtex.show",
-          "picture": "https://placebear.com/225/210",
-          "location": {
-            "latitude": 22.38,
-            "longitude": null
-          }
-        },
-        {
-          "_id": "ae61bba4-4110-45a7-84c5-ab1c08a86a1d",
-          "name": {
-            "last": "Calhoun",
-            "first": "Amparo"
-          },
-          "email": "sue.patterson@exoteric.press",
-          "picture": "https://placebear.com/60/121",
-          "location": {
-            "latitude": 22.37,
-            "longitude": 113.34
-          }
-        }
-      ]
+      // people: [
+      //   {
+      //     "_id": "ae736d8f-5a08-4bab-8e30-1eb2079e5dc2",
+      //     "name": {
+      //       "last": "Bass",
+      //       "first": "Bradley"
+      //     },
+      //     "email": "aida.griffith@sybixtex.show",
+      //     "picture": "https://placebear.com/225/210",
+      //     "location": {
+      //       "latitude": 22.38,
+      //       "longitude": null
+      //     }
+      //   },
+      //   {
+      //     "_id": "ae61bba4-4110-45a7-84c5-ab1c08a86a1d",
+      //     "name": {
+      //       "last": "Calhoun",
+      //       "first": "Amparo"
+      //     },
+      //     "email": "sue.patterson@exoteric.press",
+      //     "picture": "https://placebear.com/60/121",
+      //     "location": {
+      //       "latitude": 22.37,
+      //       "longitude": 113.34
+      //     }
+      //   }
+      // ]
+      people: []
     }
+  },
+
+  mounted() {
+    // Fetch data from api server
+    const headers = {"Authorization" : "Bearer b2atclr0nk1po45amg305meheqf4xrjt9a1bo410"}
+    fetch('https://api.json-generator.com/templates/-xdNcNKYtTFG/data', {headers})
+    .then(res => res.json())
+    .then(data => this.people = data)
+    .catch(err => console.log(err.message))
   }
 }    
 </script>
