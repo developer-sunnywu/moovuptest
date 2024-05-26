@@ -29,8 +29,8 @@ The solution of two problems is in two folders
 
 
 ### Remarks
-1. Making test lifecycle work needs a lot of time and I am afraid there is not enough time of making test case works so I give us on this part but let me illustrate the idea behind it
-2. I find that some data lack of latitude or longitude, so if the data lack one of these, it will not be render
+1. I find that some data lack of latitude or longitude, so if the data lack one of these, it will not be render 
+2. Making test lifecycle work needs a lot of time for me and I am afraid there is not enough time of making test case works so I give us on this part but let me illustrate the idea behind it
 
 2. The idea is to make four user requirements meets
     1. Retrieve list of people from the API and Display list of people.
