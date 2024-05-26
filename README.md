@@ -23,8 +23,9 @@ The solution of two problems is in two folders
 
 ### How to Run
 1. Install node
-2. Run command ```npm run dev```
-3. Run command ```npm run test:unit``` to run the test case
+2. Run command ```npm install``` to install package
+3. Run command ```npm run dev``` to start the server
+4. Run command ```npm run test:unit``` to run the test case
 
 
 ### Remarks
