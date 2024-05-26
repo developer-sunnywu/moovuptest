@@ -5,7 +5,7 @@
       <div>
         <img :src="person.picture">
         <span>{{ `${person.name.first} ${person.name.last}` }}</span>
-      </div><br/>
+      </div><br />
 
     </router-link>
   </div>
@@ -13,6 +13,8 @@
 
 
 <script>
+import axios from "axios"
+
 export default {
   data() {
     return {
@@ -49,12 +51,15 @@ export default {
   },
 
   mounted() {
-    // Fetch data from api server
-    const headers = {"Authorization" : "Bearer b2atclr0nk1po45amg305meheqf4xrjt9a1bo410"}
-    fetch('https://api.json-generator.com/templates/-xdNcNKYtTFG/data', {headers})
-    .then(res => res.json())
-    .then(data => this.people = data)
-    .catch(err => console.log(err.message))
+    const headers = { "Authorization": "Bearer b2atclr0nk1po45amg305meheqf4xrjt9a1bo410" };
+    axios.get('https://api.json-generator.com/templates/-xdNcNKYtTFG/data', { headers })
+      .then(response => {
+        // Assuming `this` context is available and `people` is a data property
+        this.people = response.data;
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
   }
 }    
 </script>
